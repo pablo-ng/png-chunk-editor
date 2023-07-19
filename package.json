@@ -1,6 +1,6 @@
 {
   "name": "png-chunk-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NPM package to read and edit chunks contained in a PNG file",
   "main": "src/index.ts",
   "scripts": {
