@@ -6,6 +6,17 @@
   "scripts": {
     "test": "jest"
   },
+  "exports": {
+    ".": "./src/index.ts",
+    "./chunks": "./src/chunks.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "chunks": [
+        "./src/chunks.ts"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pablo-ng/png-chunk-editor.git"
