@@ -12,8 +12,7 @@ Basic usage:
 
 ```js
 import fs from "fs";
-import { PNGImage } from "png-chunk-editor";
-import { PNGChunk_tEXt } from "png-chunk-editor/chunks";
+import { PNGImage, PNGChunk_tEXt } from "png-chunk-editor";
 
 // load PNG image from fs
 const buffer = fs.readFileSync("image.png");
@@ -26,7 +25,7 @@ console.log(image.chunks);
 image.insertChunk(new PNGChunk_tEXt("Keyword", "Text"), 1);
 
 // edit chunk
-const textChunk = image.getChunk(image.getChunkIndex("tEXt")!) as PNGChunk_tEXt;
+const textChunk = image.getChunk(image.getChunkIndex("tEXt"));
 textChunk.text = "New Text";
 
 // save image back to fs
@@ -37,7 +36,7 @@ fs.writeFileSync("image-edited.png", Buffer.from(bytes));
 Create PNG chunk from data bytes:
 
 ```js
-import { PNGChunk_tEXt, PNGChunk_bytes } from "png-chunk-editor/chunks";
+import { PNGChunk_tEXt, PNGChunk_bytes } from "png-chunk-editor";
 
 const chunk = new PNGChunk_bytes(
   "tEXt",
@@ -53,7 +52,7 @@ console.log(`Keyword: ${textChunk.keyword}, Text: ${textChunk.text}`);
 Create PNG chunk from bytes:
 
 ```js
-import { PNGChunk_tEXt, PNGChunk_bytes } from "png-chunk-editor/chunks";
+import { PNGChunk_tEXt, PNGChunk_bytes } from "png-chunk-editor";
 
 const chunk = PNGChunk_bytes.fromBytes([
   0x00, 0x00, 0x00, 0x17, 0x74, 0x45, 0x58, 0x74, 0x44, 0x65, 0x73, 0x63, 0x72,

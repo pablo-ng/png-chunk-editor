@@ -2,20 +2,27 @@
   "name": "png-chunk-editor",
   "version": "1.0.1",
   "description": "NPM package to read and edit chunks contained in a PNG file",
-  "main": "src/index.ts",
-  "scripts": {
-    "test": "jest"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./chunks": "./src/chunks.ts"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
   },
   "typesVersions": {
-    "*": {
-      "chunks": [
-        "./src/chunks.ts"
-      ]
-    }
+    "*": {}
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -35,7 +42,10 @@
     "zTXt",
     "iTXt"
   ],
-  "author": "pablo-ng",
+  "author": {
+    "name": "pablo-ng",
+    "email": "pablonavarrogillissen@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pablo-ng/png-chunk-editor/issues"
@@ -52,6 +62,7 @@
     "eslint-plugin-promise": "6.1.1",
     "jest": "29.6.1",
     "ts-jest": "29.1.1",
+    "tsup": "7.1.0",
     "typescript": "5.1.6"
   }
 }

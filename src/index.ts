@@ -1,5 +1,12 @@
-import { chunksFromBytes, type PNGChunk } from "./chunks";
+import {
+  chunksFromBytes,
+  type PNGChunk,
+  PNGChunk_bytes,
+  PNGChunk_tEXt,
+} from "./chunks";
 import { PNG_SIG, validateSignature } from "./utils";
+
+export { PNGChunk_bytes, PNGChunk_tEXt };
 
 export class PNGImage {
   chunks: PNGChunk[];
