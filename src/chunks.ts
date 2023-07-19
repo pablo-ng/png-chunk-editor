@@ -25,8 +25,8 @@ export abstract class PNGChunk {
   abstract size(): number;
   abstract dataBytes(): number[];
 
-  typeStr: string;
-  typeBytes: number[];
+  readonly typeStr: string;
+  readonly typeBytes: number[];
 
   constructor(type: string) {
     // check type length
